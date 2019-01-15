@@ -1,25 +1,53 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <el-container>
+      <el-header>
+        
+        <el-menu
+          :default-active="activeIndex"
+          class="el-menu-demo"
+          mode="horizontal"
+          router
+        >
+          
+          <el-menu-item index="home">UNITED</el-menu-item>
+          <el-menu-item index="login" style="float: right">Log in</el-menu-item>
+        
+
+        </el-menu>
+
+
+        <div class="line"></div>
+        
+      </el-header>
+
+      <el-main>
+        <router-view/>
+      </el-main>
+
+      
+     
+    </el-container>
   </div>
 </template>
-<style lang="stylus">
-#app
-  font-family 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
 
-#nav
-  padding 30px
-  a
-    font-weight bold
-    color #2c3e50
-    &.router-link-exact-active
-      color #42b983
+<script>
+  export default {
+    data() {
+      return {
+        activeIndex: 'home',
+      };
+    },
+    
+  }
+</script>
+
+<style>
+
+#app {
+
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
 </style>

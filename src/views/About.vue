@@ -1,3 +1,16 @@
 <template>
-  <div class="about"><h1>This is an about page</h1></div>
+  <div class="about"> 
+    <el-radio v-model="radio" label="1">Option A</el-radio>
+  <el-radio v-model="radio" label="2">Option B</el-radio>
+</div>
 </template>
+
+<script>
+  export default {
+    data () {
+      return {
+        radio: '1'
+      };
+    }
+  }
+</script>
