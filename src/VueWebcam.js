@@ -3,7 +3,7 @@
 // 2. Improve options handling
 // 3. Error handling
 
-const Vue = require('vue').default;
+const Vue = require("vue").default;
 
 const WebcamComponent = Vue.extend({
   props: {
@@ -25,18 +25,18 @@ const WebcamComponent = Vue.extend({
     },
     screenshotFormat: {
       type: String,
-      default: 'image/jpeg'
+      default: "image/jpeg"
     }
   },
   data() {
     return {
-      video: '',
-      src: '',
-      stream: '',
+      video: "",
+      src: "",
+      stream: "",
       hasUserMedia: false,
       styleObject: {
-        transform: 'scale(-1, 1)',
-        filter: 'FlipH'
+        transform: "scale(-1, 1)",
+        filter: "FlipH"
       }
     };
   },
@@ -96,12 +96,12 @@ const WebcamComponent = Vue.extend({
 
       const video = this.$refs.video;
       if (!this.ctx) {
-        const canvas = document.createElement('canvas');
+        const canvas = document.createElement("canvas");
         canvas.height = video.clientHeight;
         canvas.width = video.clientWidth;
         this.canvas = canvas;
 
-        this.ctx = canvas.getContext('2d');
+        this.ctx = canvas.getContext("2d");
 
         /*if (this.mirror) {
            const context = canvas.getContext('2d');
@@ -122,18 +122,15 @@ const WebcamComponent = Vue.extend({
 
   beforeDestroy: function() {
     this.video.pause();
-    this.src = '';
+    this.src = "";
     this.stream &&
       this.stream.getTracks()[0] &&
       this.stream.getTracks()[0].stop();
   },
 
-  destroyed: function() {
-    console.log('Destroyed');
-  },
   render: function(h) {
-    return h('video', {
-      ref: 'video',
+    return h("video", {
+      ref: "video",
       attrs: {
         width: this.width,
         height: this.height,
@@ -144,5 +141,5 @@ const WebcamComponent = Vue.extend({
   }
 });
 
-const VueWebcam = Vue.component('vue-webcam', WebcamComponent);
+const VueWebcam = Vue.component("vue-webcam", WebcamComponent);
 export default VueWebcam;

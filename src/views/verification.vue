@@ -33,8 +33,8 @@ export default {
     };
   },
   methods: {
+
     take_photo() {
-        
       this.photo = this.$refs.webcam.getPhoto();
 
       this.$notify({
@@ -42,10 +42,9 @@ export default {
         message: "A picture has been taken",
         duration: 2000
       });
-
     },
     send() {
-        this.working = true;
+      this.working = true;
 
       axios
         .post(this.base_url + "/users/authenticate", {
@@ -61,7 +60,7 @@ export default {
           this.$router.push("main");
 
           this.$message({
-            message: "Your have been identified!",
+            message: "Your data has been updated!",
             type: "success"
           });
           
@@ -76,6 +75,6 @@ export default {
           this.working = false;
         });
     }
-  }
+  } 
 };
 </script>

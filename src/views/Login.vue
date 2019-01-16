@@ -14,8 +14,6 @@
           If you've never been registered, you have the possibility to do so.
           </el-alert>
          
-          
-
       <el-row :gutter="12" class="flex justify-center mt-8">
 
         <el-col :span="6">
@@ -28,10 +26,10 @@
         </el-col>
 
         <el-col :span="6">
-             <router-link to="/webcam">
+             <router-link class="no-underline" to="/webcam">
           <el-card  shadow="always" class="cursor-pointer hover:bg-grey-lighter"><div style="text-align:center;">
                   <img src="@/assets/icon-camera.svg" style="width:96px" alt="">
-                  <p class="mt-4 font-bold ">Facial Recognition</p>
+                  <p class="mt-4 font-bold no-underline">Facial Recognition</p>
               </div></el-card>
              </router-link>
         </el-col>
